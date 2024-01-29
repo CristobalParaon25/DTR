@@ -75,58 +75,58 @@ if(!isset($_SESSION["username"])) {
                     <h1 class="h3 text-gray-800 mb-4">Daily Logs Lists</h1> 
                     <!-- Content Row -->
                     <div>
-        <a href="report.php" class="btn btn-primary">Print All</a>
-    </div>
-    <div class="row pl-1 pr-1">
-        <div class="col col-lg-12">
-            <!-- Search Bar -->
-            <div class="input-group mb-3">
-                <input type="text" id="searchInput" class="form-control" placeholder="Search by Employee ID">
-                <div class="input-group-append">
-                    <button class="btn btn-outline-secondary" type="button" onclick="searchTable()">Search</button>
-                </div>
-            </div>
+                        <a href="report.php" class="btn btn-primary mb-3">Print All</a>
+                    </div>
+                    <div class="row pl-1 pr-1">
+                        <div class="col col-lg-12">
+                            <!-- Search Bar -->
+                            <div class="input-group mb-3">
+                                <input type="text" id="searchInput" class="form-control" placeholder="Search by Employee ID">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary" type="button" onclick="searchTable()">Search</button>
+                                </div>
+                            </div>
 
-            <!-- Table -->
-            <table class="table table-striped table-bordered" id="myTable" style="width: 100%;">
-                <thead>
-                    <tr>
-                        <th class="font-weight-bold">NO.</th>
-                        <th class="font-weight-bold">EMPLOYEE ID</th>
-                        <th class="font-weight-bold">DATE</th>
-                        <th class="font-weight-bold">TIME</th>
-                        <th class="font-weight-bold">STATUS</th>
-                        <th class="font-weight-bold">ACTIONS</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
-                    require_once "connection.php"; // Include your database connection file
+                            <!-- Table -->
+                            <table class="table table-striped table-bordered" id="myTable" style="width: 100%;">
+                                <thead>
+                                    <tr>
+                                        <th class="font-weight-bold">NO.</th>
+                                        <th class="font-weight-bold">EMPLOYEE ID</th>
+                                        <th class="font-weight-bold">DATE</th>
+                                        <th class="font-weight-bold">TIME</th>
+                                        <th class="font-weight-bold">STATUS</th>
+                                        <th class="font-weight-bold">ACTIONS</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    require_once "connection.php"; // Include your database connection file
 
-                    $get_log_details = mysqli_query($conn, "SELECT * FROM employee_log");
+                                    $get_log_details = mysqli_query($conn, "SELECT * FROM employee_log");
 
-                    $counter = 1;
+                                    $counter = 1;
 
-                    while ($row = mysqli_fetch_array($get_log_details)) {
-                        ?>
-                        <tr>
-                            <td class="text-gray-700"><?php echo $counter ?></td>
-                            <td class="text-gray-900"><?php echo $row['Employee_ID'] ?></td>
-                            <td class="text-gray-700"><?php echo $row['Employee_Date'] ?></td>
-                            <td class="text-gray-700"><?php echo $row['Employee_Time'] ?></td>
-                            <td class="text-gray-700"><?php echo $row['Employee_Status'] ?></td>
-                            <td>
-                                <a href="report.php?search=<?php echo $row['Employee_ID']; ?>" class="btn btn-primary btn-sm">Print</a>
-                            </td>
-                        </tr>
-                    <?php
-                        $counter++;
-                    }
-                    ?>
-                </tbody>
-            </table>
-        </div>
-    </div>
+                                    while ($row = mysqli_fetch_array($get_log_details)) {
+                                        ?>
+                                        <tr>
+                                            <td class="text-gray-700"><?php echo $counter ?></td>
+                                            <td class="text-gray-900"><?php echo $row['Employee_ID'] ?></td>
+                                            <td class="text-gray-700"><?php echo $row['Employee_Date'] ?></td>
+                                            <td class="text-gray-700"><?php echo $row['Employee_Time'] ?></td>
+                                            <td class="text-gray-700"><?php echo $row['Employee_Status'] ?></td>
+                                            <td>
+                                                <a href="report.php?search=<?php echo $row['Employee_ID']; ?>" class="btn btn-primary btn-sm">Print</a>
+                                            </td>
+                                        </tr>
+                                    <?php
+                                        $counter++;
+                                    }
+                                    ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
 
     <!-- Include Bootstrap JS (if needed) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
