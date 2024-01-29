@@ -73,7 +73,7 @@
             echo '<div class="subtitle">Date and Time Printed: ' . date('Y-m-d H:i:s') . '</div>';
             echo '<div>Employee ID: ' . $row['Employee_ID'] . '<br>Full Name: ' . $row['Employee_FullName'] . '</div>';
             echo '</div>';
-            echo '<img src="path/to/your/logo.png" alt="Logo" class="logo">';
+            echo '<img src="Images/logobizma.jpg" alt="Logo" class="logo">';
             echo '</div>';
             echo '<hr>';
 
