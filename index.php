@@ -75,7 +75,7 @@
 </head> 
 <body>
   <div class="containerIndex container border border-dark  mt-5 custom-container">  
-    <p class="compName companyPosition text-center mt-5 mb-5">BIZMATECH</p>
+    <p class="compName companyPosition text-center mt-5 mb-5">BIMATECH</p>
     <div class="container">
       <div class="row text-center"> 
         <div class="col-xl-12">   
